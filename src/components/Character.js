@@ -1,43 +1,35 @@
 // Write your Character component here
-// import axios from "axios";
 import React from "react";
-// import styled from "styled-components";
-// import { API_KEY, BASE_URL } from "../constants";
+import styled from "styled-components";
 
 const Character = ({ characters, open, close }) => {
-  //   const [bio, setBio] = useState(null);
-
-  //   useEffect(() => {
-  //     axios
-  //       .get(`${BASE_URL}/person/${characterId}?api_key=${API_KEY}`)
-  //       .then((res) => {
-  //         setBio(res.data.result);
-  //       })
-  //       .catch((err) =>
-  //         console.log(
-  //           err,
-  //           "Something is wrong with getting the id. Check axios call for id."
-  //         )
-  //       );
-  //   }, [characterId]);
-
   return (
-    <div>
+    <Styling className="character-container">
       <div className="name">
         <h2>{characters.name}</h2>
-        {/* <button onClick={open}>Open</button> */}
       </div>
 
       <div className="bio">
-        <h3>{characters.name}'s Bio</h3>
         <p>Birth Year: {characters.birth_year}</p>
         <p>Gender: {characters.gender}</p>
         <p>Height: {characters.height}</p>
         <p>Mass: {characters.mass}</p>
-        {/* <button onClick={close}>Close</button> */}
       </div>
-    </div>
+    </Styling>
   );
 };
+
+const Styling = styled.div`
+  background-color: white;
+
+  &:hover {
+    opacity: 75%;
+    background-color: #afc9e2;
+    transition: all 0.5s ease-in-out;
+  }
+  h2 {
+    color: ${(pr) => pr.theme.nameColor};
+  }
+`;
 
 export default Character;

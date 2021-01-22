@@ -6,14 +6,6 @@ import Characters from "./components/Character";
 
 const App = () => {
   const [characters, setCharacters] = useState(null);
-  // const [currentCharacterId, setCurrentCharacterId] = useState(null);
-
-  // const open = (id) => {
-  //   setCurrentCharacterId(id);
-  // };
-  // const close = () => {
-  //   setCurrentCharacterId(null);
-  // };
 
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
